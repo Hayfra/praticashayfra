@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Função Objeto</h1>
+
+    <h2>
+        <p>Conhecendo</p>
+    </h2>
+    <p>
+        <input type="text" id="nome" placeholder="Nome">
+    </p>
+    <p>
+        <input type="text" id="sobrenome" placeholder="Sobrenome">
+    </p>
+    <p>
+        <input type="number" id="idade" placeholder="Idade">
+    </p>
+    <P>
+        <input type="text" id="corolhos" placeholder="Cor dos olhos">
+    </P>
+    <p>
+        <button onclick="inicio()">Verificar</button>
+    </p>
+
+    <p id="rel"></p>
+
+    <script>
+        function inicio() {
+            var nameInput = document.getElementById("nome").value;
+            var sobrenomeInput = document.getElementById("sobrenome").value;
+            var corolhosInput = document.getElementById("corolhos").value;
+            var ageInput = document.getElementById("idade").value;
+
+            var person = {
+                nome: nameInput,
+                sobrenome: sobrenomeInput,
+                corolhos: corolhosInput,
+                idade: ageInput,
+                greet: function () {
+                    return `Oi, meu nome é  ${person.nome} ${person.sobrenome} e eu tenho   ${person.idade} anos e meus olhos são ${person.corolhos}.`
+                }
+            };
+
+            document.getElementById("rel").innerHTML = person.greet();
+        }
+    </script>
+
+</body>
+
+</html>
